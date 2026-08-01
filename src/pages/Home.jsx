@@ -9,7 +9,7 @@ import {
   FaReact,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import Profile from"../assets/Subhakanta.jpeg"
 
 const Home = () => {
 
@@ -59,8 +59,7 @@ const Home = () => {
              <a href="https://github.com/Subhakanta5" target="_blank" rel="noopener noreferrer"> <FaGithub className="hover:text-white cursor-pointer transition" /></a>
 
               <a href="https://www.linkedin.com/in/subhakanta-nanda/" target="_blank" rel="noopener noreferrer"><FaLinkedin className="hover:text-blue-400 cursor-pointer transition" /></a>
-
-              {/* <FaInstagram className="hover:text-pink-500 cursor-pointer transition" /> */}
+              
             </div>
 
           </div>
@@ -75,8 +74,8 @@ const Home = () => {
               <div className="relative bg-slate-900 border border-slate-700 rounded-full p-2 shadow-2xl">
 
                 <img
-                  src="./src/assets/Subhakanta.jpeg"
-                  alt=""
+                  src={Profile}
+                  alt="Profile"
                   className="w-[38vh] h-[39vh] object-cover rounded-full"
                 />
 

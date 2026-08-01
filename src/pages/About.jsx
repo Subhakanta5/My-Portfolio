@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { FaCss } from "react-icons/fa6";
 import { SiTailwindcss, SiMongodb, SiMysql } from "react-icons/si";
+import Profile from "../assets/Subhakanta.jpeg"
 
 const About = () => {
   return (
@@ -26,8 +27,8 @@ const About = () => {
                 <div className="absolute -top-5 -left-5 w-full h-full border-4 border-blue-500 rounded-3xl"></div>
 
                 <img
-                  src="./src/assets/Subhakanta.jpeg"
-                  alt=""
+                  src={Profile}
+                  alt="Profile"
                   className="relative w-96 rounded-3xl shadow-2xl"
                 />
               </div>
