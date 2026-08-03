@@ -13,6 +13,10 @@ import { Link } from "react-router-dom";
 const Projects = () => {
   const desc1 =
     " Built a responsive React.js application with user registration and login authentication, Implemented Protected (Private) Rout to secure dashboard access,In Dashboard profile use Update the profile and Delete the profile, developed authentication flow using React Router DOM, Axios, and JSON Server, implemented session management with login/logout functionality, Created responsive UI using Tailwind CSS and displayed notifications using React Toastify.";
+
+    const desc2="Space Night is a modern and interactive web application built with React.js and Tailwind CSS that takes users on a journey through our Solar System. The project features a visually appealing interface with smooth animations, immersive videos, and detailed information about each planet. Users can explore planetary facts, learn about the unique characteristics of every world, and enjoy a responsive design."
+
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       {/* Header */}
@@ -92,7 +96,7 @@ const Projects = () => {
           </div>
 
           {/* Card 2 */}
-          {/* <div className="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500 transition duration-300">
+          <div className="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500 transition duration-300">
 
             <img
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
@@ -103,12 +107,14 @@ const Projects = () => {
             <div className="p-6">
 
               <h2 className="text-2xl font-bold">
-                E-Commerce Website
+                Space Night
               </h2>
 
-              <p className="text-gray-400 mt-4 leading-7">
-                Responsive shopping website with product listing,
-                shopping cart, and beautiful user interface.
+              <p
+                className="text-gray-400 mt-4 leading-7 cursor-pointer"
+                title={desc1}
+              >
+                {desc2.slice(0, 221)}...
               </p>
 
               <div className="flex gap-3 mt-6 flex-wrap">
@@ -120,28 +126,31 @@ const Projects = () => {
                   Tailwind
                 </span>
 
-                <span className="px-3 py-1 bg-yellow-500 rounded-full text-sm text-black">
-                  JavaScript
-                </span>
               </div>
 
-              <div className="flex justify-between mt-8">
+              <div className="flex justify-between mt-[12vh]">
 
-                <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-lg transition">
+                <a
+                href="https://spacenight.netlify.app/"
+                target="_blank"
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-lg transition">
                   <FaExternalLinkAlt />
                   Live Demo
-                </button>
+                </a>
 
-                <button className="flex items-center gap-2 border border-gray-600 hover:border-white px-5 py-3 rounded-lg transition">
+                <a
+                href="https://github.com/Subhakanta5/Space-Night"
+                target="_blank"
+                className="flex items-center gap-2 border border-gray-600 hover:border-white px-5 py-3 rounded-lg transition">
                   <FaGithub />
                   GitHub
-                </button>
+                </a>
 
               </div>
 
             </div>
 
-          </div> */}
+          </div>
 
           {/* Card 3 */}
           {/* <div className="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500 transition duration-300">
