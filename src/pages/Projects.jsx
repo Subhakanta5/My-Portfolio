@@ -76,7 +76,7 @@ const Projects = () => {
                 <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-5 py-3 rounded-lg transition">
                   <FaExternalLinkAlt />
                   <a
-                    href="https://taskdashboardmine.netlify.app/"
+                    href="https://taskdashboard-0mvq.onrender.com"
                     target="_blank"
                   >
                     Live Demo
@@ -86,7 +86,7 @@ const Projects = () => {
                 <button className="flex items-center gap-2 border border-gray-600 hover:border-white px-5 py-3 rounded-lg transition">
                   <FaGithub />
                   <a
-                    href="https://github.com/Subhakanta5/task-management-dashboard"
+                    href="https://github.com/"
                     target="_blank"
                   >
                     GitHub
@@ -140,7 +140,7 @@ const Projects = () => {
                 </a>
 
                 <a
-                href="https://github.com/Subhakanta5/Space-Night"
+                href="https://github.com/"
                 target="_blank"
                 className="flex items-center gap-2 border border-gray-600 hover:border-white px-5 py-3 rounded-lg transition">
                   <FaGithub />
