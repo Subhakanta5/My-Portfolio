@@ -1,52 +1,75 @@
 import React from "react";
-import { FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const navLinks = [
+    { name: "Home", path: "/home" },
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" },
+  ];
+
   return (
-    <header className="w-full bg-slate-100 shadow-md border-b border-gray-200">
-      <nav className="px-10 h-16 flex items-center justify-between">
-        
+    <header className="fixed top-0 left-0 w-full z-50 bg-gray-800 shadow-lg">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center">
+
         {/* Logo */}
-        <div className="flex items-center gap-3 cursor-pointer">
-          <div className="w-11 h-11 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl font-bold">
+        <Link
+          to="/home"
+          className="flex items-center gap-3 group"
+        >
+          <div className="w-11 h-11 rounded-full bg-gray-700 text-white flex items-center justify-center text-lg font-bold shadow-md group-hover:scale-105 transition-transform duration-300 ">
             SN
           </div>
 
-          <div>
-            <h1 className="text-2xl font-bold text-gray-800">
+          <div className="hidden sm:block">
+            <h1 className="text-lg font-bold text-white leading-tight">
               Subhakanta Nanda
             </h1>
           </div>
-        </div>
+        </Link>
 
-        {/* Navigation Links */}
-        <ul className="hidden lg:flex items-center gap-8 font-medium text-gray-600">
-          <Link to={"/home"} className="cursor-pointer hover:text-blue-900 transition hover:underline ">
-            Home
-          </Link>
+        {/* Navigation Links - RIGHT */}
+        <ul className="hidden md:flex items-center gap-8 ml-auto">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path;
 
-          <Link to={"/about"} className="cursor-pointer hover:text-blue-900 transition hover:underline ">
-            About
-          </Link>
+            return (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  className={`relative group text-sm font-medium transition-colors duration-300 ${
+                    isActive
+                      ? "text-white"
+                      : "text-gray-300 hover:text-white"
+                  }`}
+                >
+                  {link.name}
 
-          <Link to={"/contact"} className="cursor-pointer hover:text-blue-900 transition hover:underline ">
-            Contact
-          </Link>
-          <Link to={"/projects"} className="cursor-pointer hover:text-blue-900 transition hover:underline ">
-            Projects
-          </Link>
-
+                  {/* Underline */}
+                  <span
+                    className={`absolute -bottom-2 left-0 h-0.5 bg-blue-500 transition-all duration-300 ${
+                      isActive
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
-        {/* Right Side */}
-        <div className="flex items-center gap-5">
+        {/* Mobile Menu */}
+        <button
+          className="md:hidden ml-auto p-2 rounded-lg text-white hover:bg-gray-500 transition"
+        >
+          <FaBars size={20} />
+        </button>
 
-          {/* <button className="px-5 py-2.5 rounded-lg text-blue-600 border-2 border-blue-500 font-medium hover:bg-blue-700 hover:text-white transition">
-            Download CV
-          </button> */}
-          
-        </div>
       </nav>
     </header>
   );

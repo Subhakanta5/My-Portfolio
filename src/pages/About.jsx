@@ -1,161 +1,316 @@
-import { BriefcaseBusiness, GraduationCap } from "lucide-react";
 import React from "react";
 import {
   FaReact,
-  FaNodeJs,
   FaJava,
   FaHtml5,
-  FaCss3Alt,
   FaJs,
   FaGithub,
   FaAward,
+  FaCode,
+  FaCheckCircle,
+  FaEmpire,
 } from "react-icons/fa";
-import { FaCss } from "react-icons/fa6";
-import { SiTailwindcss, SiMongodb, SiMysql } from "react-icons/si";
-import Profile from "../assets/Subhakanta.jpeg"
+import { SiTailwindcss, SiMysql, SiSpringboot } from "react-icons/si";
+import {
+  BriefcaseBusiness,
+  GraduationCap,
+  MapPin,
+  CalendarDays,
+  ArrowRight,
+} from "lucide-react";
+
+import { Link } from "react-router-dom";
+import Profile from "../assets/Subha.png";
 
 const About = () => {
-  return (
-    <div className="bg-slate-950 text-white">
-      {/* Hero Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Image */}
-            <div className="flex justify-center">
-              <div className="relative">
-                <div className="absolute -top-5 -left-5 w-full h-full border-4 border-blue-500 rounded-3xl"></div>
+  const skills = [
+    {
+      icon: <FaReact />,
+      name: "React.js",
+      level: "Advanced",
+      color: "text-cyan-400",
+    },
+     {
+      icon: <SiTailwindcss />,
+      name: "Tailwind CSS",
+      level: "Advanced",
+      color: "text-cyan-300",
+    },
+    // {
+    //   icon: <FaJava />,
+    //   name: "Java",
+    //   level: "Intermediate",
+    //   color: "text-red-500",
+    // },
+    {
+      icon: <FaHtml5 />,
+      name: "HTML5",
+      level: "Advanced",
+      color: "text-orange-500",
+    },
+    {
+      icon: <FaCode />,
+      name: "CSS3",
+      level: "Advanced",
+      color: "text-blue-400",
+    },
+    {
+      icon: <FaJs />,
+      name: "JavaScript",
+      level: "Advanced",
+      color: "text-yellow-400",
+    },
+    {
+      icon: <SiSpringboot />,
+      name: "Spring Boot",
+      level: "Learning",
+      color: "text-green-400",
+    },
+    {
+      icon: <SiMysql />,
+      name: "MySQL",
+      level: "Intermediate",
+      color: "text-blue-500",
+    },
+    {
+      icon: <FaGithub />,
+      name: "GitHub",
+      level: "Version Control",
+      color: "text-white",
+    },
+  ];
 
-                <img
-                  src={Profile}
-                  alt="Profile"
-                  className="relative w-96 rounded-3xl shadow-2xl"
-                />
+  const certificates = [
+      {
+      title: "Bachelor of Technology (B.Tech)",
+      issuer: "Electrical Engineering",
+      description:
+        "Completed Bachelor of Technology (B.Tech) in Electrical Engineering with a strong foundation in technical knowledge, analytical thinking, problem-solving, and engineering principles.",
+      icon: <FaEmpire />,
+      link: "/src/assets/subu.pdf",
+    },
+    {
+      title: "Full Stack Development With React JS",
+      issuer: "QSpiders",
+      description:
+        "Completed Full Stack Development training covering Java, JavaScript, React.js, HTML, CSS, SQL, and web technologies.",
+      icon: <FaAward />,
+      link: "/src/assets/Subhapic.jpeg",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* ================= ABOUT HERO ================= */}
+      <section className="relative overflow-hidden pt-28 pb-24">
+        {/* Background Glow */}
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl" />
+        <div className="absolute top-60 -right-40 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* ================= IMAGE ================= */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                {/* Outer Glow */}
+                <div className="absolute inset-0 bg-blue-600/20 rounded-3xl blur-2xl scale-105" />
+
+                {/* Border */}
+                <div className="absolute -top-4 -left-4 w-full h-full rounded-3xl border border-blue-500/60" />
+
+                {/* Image */}
+                <div className="relative p-2 rounded-3xl bg-slate-900 border border-slate-700 shadow-2xl">
+                  <img
+                    src={Profile}
+                    alt="Subhakanta Nanda"
+                    className="w-72 h-80 sm:w-80 sm:h-96 object-cover rounded-2xl"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* Content */}
+            {/* ================= CONTENT ================= */}
             <div>
-              <p className="text-blue-400 uppercase tracking-widest font-semibold">
+              <p className="text-blue-400 uppercase tracking-[0.25em] text-sm font-semibold">
                 About Me
               </p>
 
-              <h1 className="text-5xl font-bold mt-4">
-                Passionate Full Stack Developer
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-5 leading-tight">
+                Passionate{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                  Full Stack Developer
+                </span>
               </h1>
 
-              <p className="text-gray-400 mt-8 leading-8 text-lg">
-                Hello! I'm a passionate web developer who enjoys creating
-                beautiful, responsive, and user-friendly applications. I
-                specialize in React.js, Java, Spring Boot, MySQL and Tailwind
-                CSS.
+              <p className="text-gray-400 mt-7 text-lg leading-8">
+                I'm a passionate developer focused on building modern,
+                responsive, and user-friendly web applications. I enjoy turning
+                ideas into clean and functional digital experiences.
               </p>
 
-              <p className="text-gray-400 mt-6 leading-8 text-lg">
-                I love solving real-world problems through clean code, learning
-                new technologies, and building projects that improve people's
-                lives.
+              <p className="text-gray-400 mt-5 text-lg leading-8">
+                My primary technologies include React.js, JavaScript, Java,
+                Spring Boot, MySQL, and Tailwind CSS. I enjoy solving real-world
+                problems through clean code and continuous learning.
               </p>
 
-              {/* Cards */}
-              <div className="grid grid-cols-2 gap-5 mt-10">
-                {/* <div className="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                  <h2 className="text-4xl font-bold text-blue-500">
-                    25+
-                  </h2>
-                  <p className="mt-2 text-gray-400">
-                    Completed Projects
-                  </p>
-                </div> */}
+              {/* Info */}
+              <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center">
+                    <CodeIcon />
+                  </div>
 
-                {/* <div className="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                  <h2 className="text-4xl font-bold text-green-400">
-                    2+
-                  </h2>
-                  <p className="mt-2 text-gray-400">
-                    Years Learning
-                  </p>
-                </div> */}
+                  <div>
+                    <p className="text-xs text-gray-500">Specialization</p>
+
+                    <p className="font-medium">Full Stack Development</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center">
+                    <FaGithub />
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-gray-500">Development</p>
+
+                    <p className="font-medium">Open Source & Projects</p>
+                  </div>
+                </div>
               </div>
+
+              {/* Button */}
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-3 mt-9 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold shadow-lg shadow-blue-600/20 hover:-translate-y-1 transition-all duration-300"
+              >
+                Explore My Projects
+                <ArrowRight size={18} />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Education & Experience */}
-      <section className="bg-slate-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">Education & Experience</h2>
+      {/* ================= EDUCATION & EXPERIENCE ================= */}
+      <section className="bg-slate-900/60 border-y border-slate-800 py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-blue-400 uppercase tracking-[0.25em] text-sm font-semibold">
+              My Journey
+            </p>
 
-            <p className="text-gray-400 mt-4">
-              My learning journey and practical experience.
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4">
+              Education & Experience
+            </h2>
+
+            <p className="text-gray-400 mt-5 leading-7">
+              My academic background, technical learning, and practical
+              development experience.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10">
-            {/* Education */}
-            <div className="bg-slate-800 rounded-3xl p-8">
-              <h2 className="flex items-center justify-center gap-2 text-2xl font-bold mb-8">
-                <GraduationCap size={30} />
-                Education
-              </h2>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* ================= EDUCATION ================= */}
+            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-blue-500/40 transition">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                  <GraduationCap size={26} className="text-blue-400" />
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-bold">Education</h2>
+
+                  <p className="text-sm text-gray-500">
+                    Academic & technical learning
+                  </p>
+                </div>
+              </div>
 
               <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold">Bachelor Degree</h3>
-                  <p className="text-blue-400 mt-2">2020 - 2023</p>
+                {/* Education 1 */}
+                <div className="relative pl-7 border-l border-slate-700">
+                  <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500" />
+
+                  <div className="flex items-center gap-2 text-sm text-blue-400 mb-2">
+                    <CalendarDays size={15} />
+                    2020 - 2023
+                  </div>
+
+                  <h3 className="text-xl font-bold">Bachelor Degree</h3>
+
                   <p className="text-gray-400 mt-2">Electrical Engineering</p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold">
-                    Full Stack Development
-                  </h3>
-                  <p className="text-blue-400 mt-2">
-                    Java, Web Technology
+                {/* Education 2 */}
+                <div className="relative pl-7 border-l border-slate-700">
+                  <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-cyan-400" />
+
+                  <p className="text-sm text-cyan-400 mb-2">
+                    Professional Training
                   </p>
+
+                  <h3 className="text-xl font-bold">Full Stack Development</h3>
+
                   <p className="text-gray-400 mt-2">
-                    Html, Css, JavaScript, React, Tailwind Css
+                    Java, JavaScript, React, HTML, CSS, Tailwind CSS, and Web
+                    Technologies.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Experience */}
-            <div className="bg-slate-800 rounded-3xl p-8">
-              <h2 className="flex items-center justify-center gap-2 text-2xl font-bold mb-8">
-                <BriefcaseBusiness size={30} />
-                Experience
-              </h2>
-
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold">Frontend Developer</h3>
-
-                  <p className="text-blue-400 mt-2">React & Tailwind CSS</p>
-
-                  <p className="text-gray-400 mt-2">
-                    Built responsive websites, reusable components, dashboards,
-                    and portfolio applications.
-                  </p>
+            {/* ================= EXPERIENCE ================= */}
+            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-blue-500/40 transition">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                  <BriefcaseBusiness size={25} className="text-green-400" />
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold">Personal Projects</h3>
+                  <h2 className="text-2xl font-bold">Experience</h2>
 
-                  <p className="text-blue-400 mt-2">
-                    React Task Management Dashboard
+                  <p className="text-sm text-gray-500">
+                    Development & practical work
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                {/* Experience 1 */}
+                <div className="relative pl-7 border-l border-slate-700">
+                  <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-green-400" />
+
+                  <p className="text-sm text-green-400 mb-2">
+                    Frontend Development
                   </p>
 
-                  <p className="text-gray-400 mt-2">
-                    Built a responsive React.js application with user
-                    registration and login authentication, Implemented Protected
-                    (Private) Routes to secure dashboard access, developed
-                    authentication flow using React Router DOM, Axios, and JSON
-                    Server, implemented session management with login/logout
-                    functionality, Created responsive UI using Tailwind CSS and
-                    displayed notifications using React Toastify.
+                  <h3 className="text-xl font-bold">Frontend Developer</h3>
+
+                  <p className="text-gray-400 mt-3 leading-7">
+                    Built responsive websites, reusable components, dashboards,
+                    and portfolio applications using React.js and Tailwind CSS.
+                  </p>
+                </div>
+
+                {/* Experience 2 */}
+                <div className="relative pl-7 border-l border-slate-700">
+                  <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-purple-400" />
+
+                  <p className="text-sm text-purple-400 mb-2">
+                    Personal Project
+                  </p>
+
+                  <h3 className="text-xl font-bold">
+                    React Task Management Dashboard
+                  </h3>
+
+                  <p className="text-gray-400 mt-3 leading-7">
+                    Developed authentication, protected routes, login/logout
+                    functionality, API integration using Axios, JSON Server,
+                    React Router DOM, and responsive UI using Tailwind CSS.
                   </p>
                 </div>
               </div>
@@ -164,66 +319,161 @@ const About = () => {
         </div>
       </section>
 
-      {/* Skills */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">My Skills</h2>
+      {/* ================= CERTIFICATES ================= */}
+      <section className="bg-slate-900 border-y border-slate-800 py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-blue-400 uppercase tracking-[0.25em] text-sm font-semibold">
+              Certifications
+            </p>
 
-            <p className="text-gray-400 mt-4">
-              Technologies I enjoy working with.
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4">
+              My Certificates
+            </h2>
+
+            <p className="text-gray-400 mt-5 leading-7">
+              Professional certifications and technical training that support my
+              development journey.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {[
-              { icon: <FaReact />, name: "React", color: "text-cyan-400" },
-              // { icon: <FaNodeJs />, name: "Node.js", color: "text-green-500" },
-              { icon: <FaJava />, name: "Java", color: "text-red-500" },
-              { icon: <FaJs />, name: "JavaScript", color: "text-yellow-400" },
-              { icon: <FaHtml5 />, name: "HTML", color: "text-orange-500" },
-              { icon: <FaCss />, name: "CSS", color: "text-blue-400" },
-              {
-                icon: <SiTailwindcss />,
-                name: "Tailwind",
-                color: "text-cyan-300",
-              },
-              { icon: <SiMysql />, name: "MySQL", color: "text-blue-500" },
-              // { icon: <SiMongodb />, name: "MongoDB", color: "text-green-400" },
-              { icon: <FaGithub />, name: "GitHub", color: "text-white" },
-            ].map((skill, index) => (
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {certificates.map((certificate, index) => (
               <div
                 key={index}
-                className="bg-slate-900 rounded-2xl p-8 text-center border border-slate-800 hover:border-blue-500 transition"
+                className="group bg-slate-900 border border-slate-800
+          rounded-3xl p-7
+          hover:border-blue-500/50
+          hover:-translate-y-2
+          transition-all duration-300 hover:bg-slate-950"
               >
-                <div
-                  className={`text-5xl ${skill.color} mb-5 flex justify-center`}
-                >
-                  {skill.icon}
-                </div>
+                <div className="flex items-start gap-5">
+                  {/* Certificate Icon */}
+                  <div
+                    className="w-14 h-14 shrink-0 rounded-2xl
+              bg-blue-500/10
+              border border-blue-500/20
+              flex items-center justify-center
+              text-blue-400 text-2xl
+              group-hover:scale-110
+              transition-transform duration-300"
+                  >
+                    {certificate.icon}
+                  </div>
 
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
+                  {/* Content */}
+                  <div>
+                    <p className="text-sm text-blue-400 font-medium mb-2">
+                      {certificate.issuer}
+                    </p>
+
+                    <h3 className="text-xl font-bold text-white">
+                      {certificate.title}
+                    </h3>
+
+                    <p className="text-gray-400 mt-3 leading-7">
+                      {certificate.description}
+                    </p>
+
+                    <div className="flex items-center gap-2 mt-5 text-sm text-green-400">
+                      <FaCheckCircle />
+                      <span>Completed</span>
+                    </div>
+
+                    <a
+                      href={certificate.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-5 px-5 py-2.5
+                      rounded-xl bg-blue-600 hover:bg-blue-500
+                      text-white text-sm font-semibold
+                      shadow-lg shadow-blue-600/20
+                      hover:-translate-y-1
+                      transition-all duration-300"
+                    >
+                      <FaAward />
+                      Certificate
+                      <ArrowRight size={16} />
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Achievement */}
-      <section className="bg-blue-950 py-20">
-        <div className="max-w-5xl mx-auto text-center px-6">
-          <FaAward className="text-6xl mx-auto mb-6" />
+      {/* ================= SKILLS ================= */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-blue-400 uppercase tracking-[0.25em] text-sm font-semibold">
+              Technical Skills
+            </p>
 
-          <h2 className="text-5xl font-bold">Always Learning & Growing</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold mt-4">
+              Technologies I Use
+            </h2>
 
-          <p className="mt-6 text-lg text-blue-100 leading-8">
-            My goal is to continuously improve my skills, build impactful
-            applications, and contribute to innovative software solutions.
+            <p className="text-gray-400 mt-5">
+              Tools and technologies I use to design, develop, and build modern
+              applications.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            {skills.map((skill) => (
+              <div
+                key={skill.name}
+                className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center hover:border-blue-500/50 hover:-translate-y-2 transition-all duration-300"
+              >
+                <div
+                  className={`text-5xl ${skill.color} flex justify-center group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {skill.icon}
+                </div>
+
+                <h3 className="font-semibold text-lg mt-5">{skill.name}</h3>
+
+                <p className="text-xs text-gray-500 mt-2">{skill.level}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="relative overflow-hidden py-24">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950 via-slate-950 to-indigo-950" />
+
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl" />
+
+        <div className="relative max-w-4xl mx-auto text-center px-6">
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 flex items-center justify-center mb-7">
+            <FaAward className="text-4xl text-blue-400" />
+          </div>
+
+          <p className="text-blue-400 uppercase tracking-[0.25em] text-sm font-semibold">
+            Continuous Growth
+          </p>
+
+          <h2 className="text-4xl sm:text-5xl font-bold mt-5">
+            Always Learning.
+            <span className="text-blue-500"> Always Growing.</span>
+          </h2>
+
+          <p className="mt-6 text-lg text-gray-400 leading-8 max-w-2xl mx-auto">
+            My goal is to continuously improve my technical skills, build
+            impactful applications, and contribute to innovative software
+            solutions.
           </p>
         </div>
       </section>
     </div>
   );
 };
+
+/* Small reusable icon component */
+const CodeIcon = () => <FaCode className="text-blue-400" size={18} />;
 
 export default About;
