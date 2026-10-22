@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 
-import Profile from "../assets/Subha.png";
+import Profile from "../assets/subhaprofile.png";
 import CV from "../assets/Subhakanta Nanda.pdf";
 
 const Home = () => {

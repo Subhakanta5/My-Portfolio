@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
-import Profile from "../assets/Subha.png";
+import Profile from "../assets/subhaprofile.png";
 
 const About = () => {
   const skills = [
