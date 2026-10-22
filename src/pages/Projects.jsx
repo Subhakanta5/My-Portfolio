@@ -15,7 +15,7 @@ const Projects = () => {
       title: "Task Management Dashboard",
       category: "Web Application",
       image:
-        "/src/assets/dashboard.png",
+        "/projects/dashboard.png",
       description:
         "A modern task management platform featuring authentication, protected routes, profile management, session handling, and a responsive dashboard experience.",
       technologies: [
@@ -43,7 +43,7 @@ const Projects = () => {
       title: "Space Night",
       category: "Interactive Web Experience",
       image:
-        "/src/assets/spacenight.png",
+        "/projects/spacenight.png",
       description:
         "An interactive Solar System experience built with React and Tailwind CSS, combining immersive visuals, animations, planet information, and responsive design.",
       technologies: [
@@ -66,7 +66,7 @@ const Projects = () => {
       title: "E-Commerce Website",
       category: "E-Commerce Application",
       image:
-        "/src/assets/ecommerce.png",
+        "/projects/ecommerce.png",
       description:
         "A responsive e-commerce platform with product browsing, search and filtering, shopping cart management, and a streamlined checkout experience.",
       technologies: [
