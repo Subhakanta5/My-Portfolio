@@ -80,7 +80,7 @@ const About = () => {
       description:
         "Completed Bachelor of Technology (B.Tech) in Electrical Engineering with a strong foundation in technical knowledge, analytical thinking, problem-solving, and engineering principles.",
       icon: <GraduationCap />,
-      link: "/src/assets/subu.pdf",
+      link: "/certificate/subu.pdf",
     },
     {
       title: "Full Stack Development With React JS",
@@ -88,7 +88,7 @@ const About = () => {
       description:
         "Completed Full Stack Development training covering Java, JavaScript, React.js, HTML, CSS, SQL, and web technologies.",
       icon: <FaAward />,
-      link: "/src/assets/Subhapic.jpeg",
+      link: "/certificate/Subhapic.jpeg",
     },
   ];
 
